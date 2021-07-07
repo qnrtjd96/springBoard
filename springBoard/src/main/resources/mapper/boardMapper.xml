@@ -4,13 +4,19 @@
 	<select id="boardList" resultType="com.ablecom.kangsan.vo.BoardVO">
 		select no, title, content, date, hit from board
 	</select>
+	
 	<insert id="boardCreateOk" parameterType="com.ablecom.kangsan.vo.BoardVO">
 		insert into board(no, title, content, date, hit) 
 		values(NEXT VALUE FOR boardsq, #{title}, #{content}, getdate(), 0)
 	</insert>
+	
 	<select id="boardSelect" resultType="com.ablecom.kangsan.vo.BoardVO">
 		select no, title, content, date, hit from board where no=${param1}
 	</select>
+	
+	<update id="boardUpdate" parameterType="com.ablecom.kangsan.vo.BoardVO">
+		update board set title=#{title}, content=#{content} where no=#{no}
+	</update>
 	
 </mapper>
 

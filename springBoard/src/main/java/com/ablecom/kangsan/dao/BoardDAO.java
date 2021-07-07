@@ -11,4 +11,6 @@ public interface BoardDAO {
 	public int boardCreateOk(BoardVO vo);
 
 	public BoardVO boardSelect(int no);
+
+	public int boardUpdate(BoardVO vo);
 }

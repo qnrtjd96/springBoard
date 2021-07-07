@@ -12,7 +12,7 @@
 	/* 글쓰기 버튼을 눌렀을때 */
 	$(function(){
 		$("#create").click(function(){
-			location.href="boardcreate";
+			location.href="boardCreate";
 		});
 	});
 </script>
@@ -29,7 +29,7 @@
 				
 				<c:forEach var="data" items="${list }">
 					<li>${data.no}</li>
-		            <li class="wordcut"><a href="boardread?no=${data.no }">${data.title }</a></li>
+		            <li class="wordcut"><a href="boardRead?no=${data.no }">${data.title }</a></li>
 		            <li>${data.date }</li>
 		            <li>${data.hit }</li>
 				</c:forEach>

@@ -12,4 +12,6 @@ public interface BoardService {
 
 	public BoardVO boardSelect(int no);
 
+	public int boardUpdate(BoardVO vo);
+
 }

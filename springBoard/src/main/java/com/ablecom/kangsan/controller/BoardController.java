@@ -30,14 +30,14 @@ public class BoardController {
 	}
 	
 	//글쓰기 페이지 이동
-	@RequestMapping("boardcreate")
+	@RequestMapping("boardCreate")
 	public String boardcreate() {
 		
-		return "board/boardcreate";
+		return "board/boardCreate";
 	}
 	
 	//글 완료버튼 누르면 시작하는 로직
-	@RequestMapping(value="boardCreateOk", method=RequestMethod.POST)
+	@RequestMapping(value="/boardCreateOk", method=RequestMethod.POST)
 	public ModelAndView boardCreateOk(BoardVO vo) {
 		
 		ModelAndView mav = new ModelAndView();
@@ -52,13 +52,13 @@ public class BoardController {
 	}
 	
 	//글 상세내역
-	@RequestMapping("/boardread")
+	@RequestMapping("/boardRead")
 	public ModelAndView boardRead(int no) {
 	
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("vo", boardService.boardSelect(no));
-		mav.setViewName("board/boardread");
+		mav.setViewName("board/boardRead");
 		
 		return mav;
 	}
@@ -68,10 +68,24 @@ public class BoardController {
 	public ModelAndView boardUpdate(int no) {
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("vo", boardService.boardSelect(no));
+		mav.addObject("vo", boardService.boardSelect(no)); //boardSelect코드 재사용 JAVA의 장점중 하나
 		mav.setViewName("board/boardUpdate");
 		
 		return mav;
 	}
 	
+	//글수정페이지에서 수정하기버튼 눌렀을때
+	@RequestMapping("/boardUpdateOk")
+	public ModelAndView boardUpdateOk(BoardVO vo) {
+		ModelAndView mav = new ModelAndView();
+		
+		
+		int success = boardService.boardUpdate(vo);
+		if(success>=1) {
+			mav.setViewName("redirect:/");
+		}else {
+			mav.setViewName("redirect:/board/boardUpdate");
+		}
+		return mav;
+	}
 }

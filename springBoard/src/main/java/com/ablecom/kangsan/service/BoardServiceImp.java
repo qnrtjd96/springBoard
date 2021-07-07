@@ -33,5 +33,11 @@ public class BoardServiceImp implements BoardService {
 		return boardDAO.boardSelect(no);
 	}
 
+	@Override
+	public int boardUpdate(BoardVO vo) {
+		
+		return boardDAO.boardUpdate(vo);
+	}
+
 
 }
