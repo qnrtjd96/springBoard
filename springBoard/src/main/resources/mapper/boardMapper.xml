@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ablecom.kangsan.dao.BoardDAO">
-	<select id="boardList" resultType="com.ablecom.kangsan.vo.BoardVO">
-		select no, title, content, date, hit from board
+	<select id="boardList" parameterType="com.ablecom.kangsan.vo.PageSearchVO" resultType="com.ablecom.kangsan.vo.BoardVO">
+		select no, title, content, convert(varchar(10), date, 120) as date, hit from
+				(select ROW_NUMBER() over(order by no desc) as rowNumber, no, title, content, convert(varchar(10), date, 120) as date, hit
+				 from board) as a
+		where a.rowNumber between ${pageNum-1}*${onePageRecord}+1 and ${pageNum-1}*${onePageRecord}+${onePageRecord}
+		order by a.no desc
 	</select>
 	
 	<insert id="boardCreateOk" parameterType="com.ablecom.kangsan.vo.BoardVO">
@@ -11,12 +15,23 @@
 	</insert>
 	
 	<select id="boardSelect" resultType="com.ablecom.kangsan.vo.BoardVO">
-		select no, title, content, date, hit from board where no=${param1}
+		select no, title, content, convert(varchar(10), date, 120) as date, hit from board where no=${param1}
 	</select>
 	
 	<update id="boardUpdate" parameterType="com.ablecom.kangsan.vo.BoardVO">
 		update board set title=#{title}, content=#{content} where no=#{no}
 	</update>
 	
+	<delete id="boardDelete">
+		delete from board where no=${param1}
+	</delete>
+	
+	<select id="boardTotalRecord" parameterType="com.ablecom.kangsan.vo.PageSearchVO" resultType="int">
+		select count(no) from board
+	</select>
+	
+	<update id="hitCount">
+		update board set hit=hit+1 where no=${param1}
+	</update>
 </mapper>
 
