@@ -1,0 +1,29 @@
+@charset "UTF-8";
+	ul, li{
+		list-style:none;
+	}
+	.main{
+		overflow:auto;
+	}
+    .main li{
+    	width:10%; 
+    	height:40%; 
+    	line-height:40px; 
+    	border-bottom:1px solid gray; 
+    	float:left;
+    }
+   	.main li:nth-child(4n+2){
+   		width:65%;
+   	}
+   	.wordcut{
+   		white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+   	}
+   	.board{
+   		overflow:auto;
+   	}
+   	#create{
+   		float:right;
+	    width: 116px;
+	    height: 56px;
+	    margin-right: 50px;
+   	}

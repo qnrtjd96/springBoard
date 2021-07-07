@@ -1,0 +1,35 @@
+@charset "UTF-8";
+	ul, li{
+		list-style:none;
+		margin:0px;
+		padding:0px;
+	}
+	.read{
+	    font-size: 50px;
+	    margin-bottom: 50px;
+	}
+   	#title{
+   		width: 80%;
+    	height: 30px;
+   	}
+   	#content{
+   		width: 80%;
+   		height: 50px;
+   	}
+   	.readView li{
+   		margin-bottom: 20px;
+   	}
+   	.enter{
+   		width: 300px;
+    	height: 50px;
+	    margin-left: 174px;
+	    margin-right: 100px;
+   	}
+   	.reeset{
+   		width: 300px;
+    	height: 50px;
+    	margin-left: 100px;
+    	margin-right: 50px;
+   	}
+   	
+   	

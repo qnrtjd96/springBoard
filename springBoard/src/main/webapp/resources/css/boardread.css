@@ -1,0 +1,39 @@
+@charset "UTF-8";
+	ul, li{
+		list-style:none;
+		margin:0px;
+		padding:0px;
+	}
+	.read{
+	    font-size: 50px;
+	    margin-bottom: 50px;
+	}
+	.readView li {
+	    width: 15%;
+	    float: left;
+	}
+	.readView{
+		width: 100%;
+		overflow: auto;
+		border-top: 1px solid silver;
+		border-left: 1px solid silver;
+		border-right: 1px solid silver;
+	}
+	.readView li:nth-child(2n){
+   		width:80%;
+   	}
+   	.main{
+   		margin-left: 30%;
+    	margin-right: 30%;
+   	}
+   	.save{
+   		float: right;
+   	}	
+   	.content{
+   		border-bottom: 1px solid silver;
+	    border-left: 1px solid silver;
+	    border-right: 1px solid silver;
+	    width: 100%;
+	    border-top: 1px solid silver;
+   	}
+  

@@ -4,26 +4,26 @@
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- Head에 Mybatis-spring 추가 -->
-	
-	<!-- DataSource -->
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@bitcamp4.iptime.org:1521:xe"></property>
-		<property name="username" value="c##fighting"></property>
-		<property name="password" value="c##fighting"></property>
-	</bean> -->
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!-- 드라이버 클래스 이름이 변경됨 -->
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"></property>
+ 
+        <!-- 연결문자열에 log4jdbc가 추가됨 -->
+        <!--SQL Server에 접속하는 코드, 아이디와 비밀번호, 데이터베이스 이름-->
+        <!-- value에 log4jdbc가 들어있기 때문에, 로그가 찍혀 과정이 출력되게 된다. -->
+        <property name="url" value= "jdbc:sqlserver://192.168.50.160:1433;databaseName=kangsan;sslProtocol=TLSv1.2;sslProtocol=TLSv1;sendStringParametersAsUnicode=false" /> <!--로컬호스트 192.168.50.160인 1433으로 데이터베이스 kangsan에 접속  -->
+        <property name="username" value="sa" />    <!-- id는 sa 라고 한다 -->
+        <property name="password" value="ablecom" />  <!-- 비밀번호는 ablecom 라고 한다 -->
+    </bean>
 	
 	<!-- SqlSession Factory 생성 -->
-	<!-- <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 		<property name="mapperLocations" value="classpath:/*mapper/*Mapper.xml"></property>
 	</bean>
 	
-	<mybatis-spring:scan base-package="com.beetmall.sshj.seller.dao"/>
-	<mybatis-spring:scan base-package="com.beetmall.sshj.custom.dao"/>
-	<mybatis-spring:scan base-package="com.beetmall.sshj.admin.dao"/> -->
+	<mybatis-spring:scan base-package="com.ablecom.kangsan.dao"/>
 </beans>

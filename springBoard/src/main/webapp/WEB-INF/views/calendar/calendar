@@ -1,0 +1,24 @@
+개발일정및 쓰이는 기능 정리
+
+기능
+1. 페이징처리
+2. 생성, 읽기, 수정, 삭제
+3. 생성-> 써머노트 기능 넣고 외부파일 넣기
+4. 읽기-> 그냥 동일하게 일기
+5. 수정-> 동일하게 수정
+6. 삭제-> 동일하게 삭제
+
+////////////////////////////////////////////////
+2021/07/05
+1. home완성
+2. db연결도중 오류가 많이떠서 오류잡는데 시간이 많이걸림
+
+////////////////////////////////////////////////////
+2021/07/06
+1. ~10시반까지 에러 찾기후 에러 고침
+Failed to obtain JDBC Connection; nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: 드라이버가 SSL(Secure Sockets Layer) 암호화를 사용하여 SQL Sever로 보안 연결을 설정할 수 없습니다. 오류: "The server selected protocol version TLS10 is not accepted by client preferences [TLS13, TLS12]". ClientConnectionId:a410f5b4-c8ed-4028-a2b9-37c2c2d970b7
+>> java버전을 바꿔보니 고쳐짐 
+openjdk1.8.0>jdk11.0>jre1.8.0으로 바꾸니까 고쳐짐
+
+2. home db긁어오기 성공
+3. create 게시판 
