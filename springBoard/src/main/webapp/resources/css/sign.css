@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+	ul, li{
+		list-style:none;
+		padding-left:0px;
+	}
+	.sign{
+		width: 150px;
+	}
+	.main{
+		margin-left: 30%;
+	}
+	#zipSearch{
+		margin-left: 34px;
+	}
+	.Notepad>li:nth-child(2n){
+	    margin-bottom: 20px;
+	}
+	.mainname{
+		font-size: 50px;
+	}
+	#userzipcode{
+	    width: 60px;
+	}
+	#userdetailaddr{
+	    width: 231px;
+	}
+	

@@ -15,12 +15,16 @@
 		$("#create").click(function(){
 			location.href="boardCreate";
 		});
+		$("#login").click(function(){
+			location.href="login";
+		});
 	});
 </script>
 </head>
 <body>
 	<div class="container">
 		<div class="board">
+			<button id="login">로그인</button>
 			<button id="create">글쓰기</button>
 			<ul class="main">
 				<li>번호</li>

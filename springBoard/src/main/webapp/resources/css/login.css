@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+	ul, li{
+		list-style:none;
+	}
+	
+	.loginMain>li{
+	    font-size: 30px;
+        width:100%;
+        text-align: center;
+        height:100%;
+	}
+	
+	.loginMain>li:nth-child(2n){
+		margin-bottom: 25px;
+	}
+	
+	.loginMain>li:nth-child(2n+1){
+		
+	}
+	
+	#login, #sign{
+		margin-left: 832px;
+    	width: 100px;	
+   	    margin-bottom: 15px;
+	}
+	
