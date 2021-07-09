@@ -2,6 +2,7 @@ package com.ablecom.kangsan.controller;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ablecom.kangsan.service.BoardService;
 import com.ablecom.kangsan.vo.BoardVO;
+import com.ablecom.kangsan.vo.MemberVO;
 import com.ablecom.kangsan.vo.PageSearchVO;
 
 @Controller
@@ -48,9 +50,13 @@ public class BoardController {
 	
 	//글 완료버튼 누르면 시작하는 로직
 	@RequestMapping(value="/boardCreateOk", method=RequestMethod.POST)
-	public ModelAndView boardCreateOk(BoardVO vo) {
+	public ModelAndView boardCreateOk(BoardVO vo, HttpServletRequest req, HttpSession session) {
 		
 		ModelAndView mav = new ModelAndView();
+		
+		MemberVO vo2 = (MemberVO)session.getAttribute("logVO");
+		vo.setUserid(vo2.getUserid());
+		
 		int success = boardService.boardCreateOk(vo);
 		
 		if(success>=1) {

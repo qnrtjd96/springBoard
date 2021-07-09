@@ -6,6 +6,7 @@ public class BoardVO {
 	private String content;
 	private String date;
 	private int hit;
+	private String userid;
 	
 	public int getNo() {
 		return no;
@@ -37,4 +38,11 @@ public class BoardVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	
 }

@@ -19,13 +19,9 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
-<script>
-	$(function(){
-		$('#content').summernote({
-			height:400
-		});
-	});
-</script>
+<!-- 써머노트및 써머노트 유효성검사 -->
+<script src=/resources/js/summernote.js></script>
+
 </head>
 <body>
 	<div class="container">
@@ -37,9 +33,7 @@
 					<li><input type="text" name="title" id="title"/></li>
 					<li>내용</li>
 					<li><textarea name="content" id="content"></textarea></li>
-					<li><input type="submit" value="글등록" class="enter"/>
-						<input type="reset" value="다시쓰기" class="reeset"/>
-					</li>
+					<li><input type="submit" value="글등록" class="enter" id="enter"/></li>
 				</ul>
 			</form>
 		</div>
