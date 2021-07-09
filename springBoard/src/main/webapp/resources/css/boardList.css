@@ -6,13 +6,13 @@
 		overflow:auto;
 	}
     .main li{
-    	width:10%; 
+    	width:8%; 
     	height:40%; 
     	line-height:40px; 
     	border-bottom:1px solid gray; 
     	float:left;
     }
-   	.main li:nth-child(4n+2){
+   	.main li:nth-child(5n+2){
    		width:65%;
    	}
    	.wordcut{
@@ -22,14 +22,19 @@
    		overflow:auto;
    	}
    	#create{
-   		float:right;
 	    width: 116px;
 	    height: 56px;
 	    margin-right: 50px;
    	}
-   	#login{
-	   	float: left;
+   	.login{
 	    width: 116px;
 	    height: 56px;
 	    margin-right: 50px;
+	    margin-left: 40%;
+   	}
+   	.buttons>button{
+   		float: left;
+   	}
+   	.buttons{
+   		overflow: auto;
    	}

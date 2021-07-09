@@ -61,5 +61,12 @@ public class MemberController {
 		return mav;
 	}
 	
+	//로그아웃
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/";
+	}
 	
 }

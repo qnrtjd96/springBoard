@@ -10,19 +10,9 @@
 <link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/css/sign.css">
 <!-- 카카오 우편번호API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	$(function(){
-		$("#zipSearch").click(function(){
-			new daum.Postcode({
-			    oncomplete: function(data) {
-			        $("#userzipcode").val(data.zonecode);
-			        $("#useraddr").val(data.address);
-			        document.getElementById('userdetailaddr').focus();
-			    }
-			}).open();
-		});
-	});
-</script>
+
+<!-- 카카오 우편번호 로직 및 벨리데이션체크js -->
+<script src=/resources/js/sign.js></script>
 </head>
 <body>
 	<div class="container">
@@ -39,7 +29,7 @@
 						<input type="text" name="useraddr" id="useraddr" placeholder="주소"/><br/>
 						<input type="text" name="userdetailaddr" id="userdetailaddr" placeholder="상세주소"/></li>
 				</ul>
-				<input type="submit" value="가입하기" class="sign"/>
+				<input type="submit" value="가입하기" class="sign" id="sign"/>
 			</form>
 		</div>
 	</div>

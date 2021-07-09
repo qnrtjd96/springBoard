@@ -16,6 +16,10 @@
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<!-- 써머노트및 써머노트 유효성검사 -->
+<script src=/resources/js/summernote.js></script>
+
 </head>
 <body>
 	<div class="container">
@@ -30,46 +34,10 @@
 					<li><input type="text" name="title" id="title" value="${vo.title}"></li>
 					<li>내용</li>
 					<li><textarea name="content" id="content">${vo.content}</textarea>
-					<li><input type="submit" value="수정하기" class="enter"/>
+					<li><input type="submit" value="수정하기" class="enter" id="enter"/>
 				</ul>
 			</form>
 		</div>
 	</div>
 </body>
-<script>
-	$(document).ready(function() {
-		  $('#content').summernote({
-			  height: 400,                 // 에디터 높이 
-			  focus: true,
-			  //콜백 함수
-	          callbacks : { 
-	          	onImageUpload : function(files, editor, welEditable) {
-	          // 파일 업로드(다중업로드를 위해 반복문 사용)
-	          for (var i = files.length - 1; i >= 0; i--) {
-	          uploadSummernoteImageFile(files[i],this);
-	          		}
-	          	}
-	          }
-		  });
-		});
-		
-	/**
-	* 이미지 파일 업로드
-	*/
-	function uploadSummernoteImageFile(file, el) {
-		data = new FormData();
-		data.append("file", file);
-		$.ajax({
-			data : data,
-			type : "POST",
-			url : "uploadSummernoteImageFile",
-			contentType : false,
-			enctype : 'multipart/form-data',
-			processData : false,
-			success : function(data) {
-				$(el).summernote('editor.insertImage', data.url);
-			}
-		});
-	}
-</script>
 </html>

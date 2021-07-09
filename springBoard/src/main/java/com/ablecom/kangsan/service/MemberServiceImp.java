@@ -20,7 +20,7 @@ public class MemberServiceImp implements MemberService {
 
 	@Override
 	public MemberVO loginCheck(MemberVO vo) {
-		return null;
+		return memberDAO.loginCheck(vo);
 	}
 
 	

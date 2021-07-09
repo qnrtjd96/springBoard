@@ -29,15 +29,19 @@
 				<li>${vo.date }</li>
 				<li>조회수</li>
 				<li>${vo.hit }</li>
+				<li>아이디</li>
+				<li>${vo.userid }</li>
 				<li>제목</li>
 				<li>${vo.title }</li>
 				<li>내용</li>
 			</ul>
 			<div class="content">${vo.content }</div>
-			<div class="save">
-				<a href="boardUpdate?no=${vo.no}"><button>수정하기</button></a>
-				<button id="delete">삭제</button>
-			</div>
+			<c:if test="${logVO.userid == vo.userid}">
+				<div class="save">
+					<a href="boardUpdate?no=${vo.no}"><button>수정하기</button></a>
+					<button id="delete">삭제</button>
+				</div>
+			</c:if>
 		</div>
 	</div>
 </body>

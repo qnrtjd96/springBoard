@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ablecom.kangsan.dao.MemberDAO">
-	<insert id="signIn" parameterType="com.ablecom.kangsan.vo.BoardVO">
+	<insert id="signIn" parameterType="com.ablecom.kangsan.vo.MemberVO">
 		insert into member(userid, userpwd, userzipcode, useraddr, userdetailaddr) 
 		values(#{userid}, #{userpwd}, ${userzipcode}, #{useraddr}, #{userdetailaddr})
 	</insert>
+	<select id="loginCheck" parameterType="com.ablecom.kangsan.vo.MemberVO" resultType="com.ablecom.kangsan.vo.MemberVO">
+		select userid, userpwd from member where userid=#{userid} and userpwd=#{userpwd}
+	</select>
 </mapper>
 

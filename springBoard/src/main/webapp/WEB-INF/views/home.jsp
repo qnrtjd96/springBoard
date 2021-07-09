@@ -18,25 +18,39 @@
 		$("#login").click(function(){
 			location.href="login";
 		});
+		$("#logout").click(function(){
+			location.href="logout";
+		});
 	});
 </script>
 </head>
 <body>
 	<div class="container">
 		<div class="board">
-			<button id="login">로그인</button>
-			<button id="create">글쓰기</button>
+			<div class="buttons">
+				<c:if test="${logVO==null}">
+					<button id="login" class="login">로그인</button>
+				</c:if>
+				<c:if test="${logVO!=null}">
+					<button id="logout" class="login">로그아웃</button>
+				</c:if>
+				<c:if test="${logVO != null}">
+					<button id="create">글쓰기</button>
+				</c:if>
+			</div>
 			<ul class="main">
 				<li>번호</li>
 				<li>제목</li>
 				<li>날짜</li>
 				<li>조회수</li>
+				<li>작성자</li>
 				
 				<c:forEach var="data" items="${list }">
 					<li>${data.no}</li>
 		            <li class="wordcut"><a href="boardRead?no=${data.no }">${data.title }</a></li>
 		            <li>${data.date }</li>
 		            <li>${data.hit }</li>
+		            <li>${data.userid }</li>
 				</c:forEach>
 			</ul>
 		</div>

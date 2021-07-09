@@ -6,5 +6,7 @@ public interface MemberDAO {
 
 	public int signIn(MemberVO vo);
 
+	public MemberVO loginCheck(MemberVO vo);
+
 
 }
