@@ -53,7 +53,7 @@ public class BoardServiceImp implements BoardService {
 
 	@Override
 	public int hitCount(int no) {
-		// TODO Auto-generated method stub
+		
 		return boardDAO.hitCount(no);
 	}
 

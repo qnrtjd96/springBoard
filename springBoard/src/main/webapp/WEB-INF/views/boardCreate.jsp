@@ -20,7 +20,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 <!-- 써머노트및 써머노트 유효성검사 -->
-<script src=/resources/js/summernote.js></script>
+<script src=<%=request.getContextPath()%>/resources/js/summernote.js></script>
 
 </head>
 <body>

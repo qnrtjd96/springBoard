@@ -70,7 +70,7 @@
 	                 </c:if>
 	              </c:if>
 	           </c:forEach>
-	           <c:if test="${pageVO.pageNum < pageVO.totalPage}">
+	           <c:if test="${pageVO.pageNum < pageVO.totalPage}"><!-- 다음 페이지가 있을때 -->
 	              <a class="arrow next" href="<%=request.getContextPath()%>?pageNum=${pageVO.pageNum+1}"></a>
 	           </c:if>
 			</div>
