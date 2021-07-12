@@ -35,8 +35,7 @@ public class MemberController {
 		ModelAndView mav = new ModelAndView();
 		
 		int success = memberService.signIn(vo);
-		
-		System.out.println("success = " + success);
+
 		if(success>=1) {
 			mav.setViewName("member/login");
 		}

@@ -51,7 +51,6 @@ public class BoardController {
 	//글 완료버튼 누르면 시작하는 로직
 	@RequestMapping(value="/boardCreateOk", method=RequestMethod.POST)
 	public ModelAndView boardCreateOk(BoardVO vo, HttpServletRequest req, HttpSession session) {
-		
 		ModelAndView mav = new ModelAndView();
 		
 		MemberVO vo2 = (MemberVO)session.getAttribute("logVO");

@@ -18,7 +18,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 <!-- 써머노트및 써머노트 유효성검사 -->
-<script src=/resources/js/summernote.js></script>
+<script src=<%=request.getContextPath()%>/resources/js/summernote.js></script>
 
 </head>
 <body>
@@ -27,8 +27,8 @@
 			<div class="read">글 수정하기</div>
 			<form method="post" action="boardUpdateOk">
 				<input type="hidden" name="no" value="${vo.no}">
-				<input type="hidden" name="no" value="${vo.date}">
-				<input type="hidden" name="no" value="${vo.hit}">
+				<input type="hidden" name="date" value="${vo.date}">
+				<input type="hidden" name="hit" value="${vo.hit}">
 				<ul class="readView">
 					<li>제목</li>
 					<li><input type="text" name="title" id="title" value="${vo.title}"></li>
