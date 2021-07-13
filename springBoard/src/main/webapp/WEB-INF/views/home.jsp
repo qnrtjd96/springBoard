@@ -10,14 +10,16 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/boardList.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/paging.css">
 <script>
-	/* 글쓰기 버튼을 눌렀을때 */
 	$(function(){
+		/* 글쓰기 버튼을 눌렀을때 */
 		$("#create").click(function(){
 			location.href="boardCreate";
 		});
+		/* 로그인 버튼을 눌렀을때 */
 		$("#login").click(function(){
 			location.href="login";
 		});
+		/* 로그아웃 버튼을 눌렀을때 */
 		$("#logout").click(function(){
 			location.href="logout";
 		});
@@ -33,8 +35,6 @@
 				</c:if>
 				<c:if test="${logVO!=null}">
 					<button id="logout" class="login">로그아웃</button>
-				</c:if>
-				<c:if test="${logVO != null}">
 					<button id="create">글쓰기</button>
 				</c:if>
 			</div>
